@@ -11,11 +11,11 @@ __**NOTE:**__ Using SMS messages in conjunction with the AT&T IoT Kit are not st
 
 This will bring up a dialog for you to select the Source URL:. Enter [[https://github.com/jflynn129/WNC14A2ASms_demo]] ensuring Import As: Program is selected. Once "main.cpp" has been imported you will have a new entry in "My Programs" titled WNC14A2A_socket_example
 
-#. Right click on the WNC14A2A_socket_example and again "Import Prgram" followed by "From URL ...". This time import the ARMmbed v5.x O/S from [[https://github.com/ARMmbed/mbed-os]]
+3. Right click on the WNC14A2A_socket_example and again "Import Prgram" followed by "From URL ...". This time import the ARMmbed v5.x O/S from [[https://github.com/ARMmbed/mbed-os]]
 
-#. Right click on the WNC14A2A_socket_example and again "Import Prgram" followed by "From URL ...". This time import the WNC14A2AInterface from [[https://github.com/jflynn129/WNC14A2AInterface]]
+4. Right click on the WNC14A2A_socket_example and again "Import Prgram" followed by "From URL ...". This time import the WNC14A2AInterface from [[https://github.com/jflynn129/WNC14A2AInterface]]
 
-#. As a final step, click on the WNC14A2A_socket_example and again "Import Prgram" folloed by "From URL ..." then select [[https://developer.mbed.org/teams/Avnet/code/WncControllerK64F/]]. The library (which will blso ring includes the WncController class which implements the AT commands necessary to control the WNC14A2A module.
+5. As a final step, click on the WNC14A2A_socket_example and again "Import Prgram" folloed by "From URL ..." then select [[https://developer.mbed.org/teams/Avnet/code/WncControllerK64F/]]. The library (which will blso ring includes the WncController class which implements the AT commands necessary to control the WNC14A2A module.
 
 With all the components in-place, simply execute the **Compile** button.  There will be 225 warning and 
 1 info message generated which is expected.  Copy the resulting 'WNC14A2A_socket_exampleK64F.bin' program
@@ -23,15 +23,15 @@ to your connect kit.
 
 =Discussion=
 SMS is provided in the WNC14A2AInterface class.  It provides APIs to:
-# Start the SMS interface **sms_start()**.  This allows the WNC14A2A to begin processing SMS messages.
-# getSMS is called to retrieve a SMS message that has been sent to the device.
-# sendIOTSms allows the user to send an SMS message to another device on the IoT network.
-# getSMSnbr will return the SMS ID/Number for this device
-# sms_listen() is called so that the device will begin monitoring for incomming SMS messages at a user
+* Start the SMS interface **sms_start()**.  This allows the WNC14A2A to begin processing SMS messages.
+* getSMS is called to retrieve a SMS message that has been sent to the device.
+* sendIOTSms allows the user to send an SMS message to another device on the IoT network.
+* getSMSnbr will return the SMS ID/Number for this device
+* sms_listen() is called so that the device will begin monitoring for incomming SMS messages at a user
 specified interval.  If a call-back function is attached, it will be called when a message is received.  If 
 a call-back function is not registered, nothing will be done with the SMS message.  The WNC14A2A can store a 
 maximum of 3 messages.
-# sms_attach() specifies the function that is to be called when an SMS message is received
+* sms_attach() specifies the function that is to be called when an SMS message is received
 
 Monitoring for an SMS is performed by starting a thread that executes at a user defined interval.  If no interval is
 specified, 30 seconds is assumed.
@@ -50,37 +50,69 @@ Once the program is compiled and downloaded to the IoT Kit, perform the followin
 STARTING WNC SMS Test
 
 Toggling Wakeup...
+
 Toggling complete.
+
  WNC Initialized
+
  SMS Initialized
+
 get my number: 882350201419599
+
 sending SMS #1 to 5277..GO; waiting...
+
 msg_rcvd called, msg from: '5277'
+
 msg_rcvd from: '16/11/14'
+
 msg_rcvd at '13:17:20-32'
+
 msg_rcvd contained '"16/11/14,13:17:20-32",0'
+
 sending SMS #2 to 5277..GO; msg_rcvd called, msg from: '5277'
+
 msg_rcvd from: '16/11/14'
+
 msg_rcvd at '13:17:41-32'
+
 msg_rcvd contained '"16/11/14,13:17:41-32",0'
+
 waiting...
+
 sending SMS #3 to 5277..GO; waiting...
+
 msg_rcvd called, msg from: '5277'
+
 msg_rcvd from: '16/11/14'
+
 msg_rcvd at '13:18:02-32'
+
 msg_rcvd contained '"16/11/14,13:18:02-32",0'
+
 .
+
 .
+
 .
+
 sending SMS #64 to 5277..GO; waiting...
+
 msg_rcvd called, msg from: '5277'
+
 msg_rcvd from: '16/11/14'
+
 msg_rcvd at '13:39:43-32'
+
 msg_rcvd contained '"16/11/14,13:39:43-32",0'
+
 msg_rcvd called, msg from: '5277'
+
 msg_rcvd from: '16/11/14'
+
 msg_rcvd at '13:39:46-32'
+
 msg_rcvd contained 'This is a test...'
+
 
 <</code>>
 
